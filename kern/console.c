@@ -192,6 +192,9 @@ cga_putc(int c)
 	}
 
 	// What is the purpose of this?
+	/* Ans: if crt_pos exceed CRT_SIZE(which is CRT_COLS*CRT_ROWS),
+	 *      then clear last column for leaving space to further printing.
+	 */
 	if (crt_pos >= CRT_SIZE) {
 		int i;
 
